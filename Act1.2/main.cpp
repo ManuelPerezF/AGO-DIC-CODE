@@ -1,5 +1,7 @@
 #include <iostream>
 #include "exchangeSort.hpp"
+#include "bubbleSort.hpp"
+#include "selectionSort.hpp"
 #include <vector>
 
 using namespace std;
@@ -22,5 +24,22 @@ int main() {
     }
     cout << endl;
 
+    BubbleSort<int>::sort(data);
+    cout << "Ordenamiento con BubbleSort: ";
+    for (const auto& num : data) 
+    {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    SelectionSort<int>::sort(data);
+    cout << "Ordenamiento con SelectionSort: ";
+    for (const auto& num : data) 
+    {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    
     return 0;
 }
