@@ -28,16 +28,16 @@ data = {
         100, #CALIFICADA
         95,  #ACTIVIDAD 
         95,  #CALIFICADA
-        70,  #VIDEO ELUMEN
+        100, #CALIFICADA
         100, #CALIFICADA
         100, #CALIFICADA
         100, #CALIFICADA
         90,  #CALIFICADA
-        100,  #EXAMEN 
+        80,  #EXAMEN 
         70,  #CALIFICADA
-        100, #CALIFICADA
-        87,  #CALIFICADA
-        98   #CALIFICADA
+        86.77, #CALIFICADA
+        100,  #CALIFICADA
+        95   #CALIFICADA
     ]
 }
 
