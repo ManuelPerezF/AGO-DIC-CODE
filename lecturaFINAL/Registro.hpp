@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "Fecha.h"
+#include "Fecha.hpp"
 #include <fstream>
 
 class Registro {
@@ -16,4 +16,5 @@ class Registro {
     bool operator<(const Registro&) const;
     friend std::ifstream& operator>>(std::ifstream&, Registro&);
     friend std::ostream& operator<<(std::ostream&, const Registro&);
+    Fecha getFecha() const;
 };

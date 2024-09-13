@@ -17,5 +17,6 @@ class Fecha {
     bool operator<(const Fecha&) const;
     bool operator>=(const Fecha&) const;
     bool operator<=(const Fecha&) const;
+    Fecha getFecha() const;
     friend std::ostream& operator<<(std::ostream&, const Fecha&);
 };

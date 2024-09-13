@@ -1,16 +1,10 @@
-//Equipo 6
-//Autores: Manuel Perez, Herman Pauwells
-
 #include <iostream>
 #include <fstream>
-#include "Registro.h"
+#include "Registro.hpp"
 #include <vector>
-#include <algorithm>
 
 using namespace std;
-
 void leerArchivo(string, vector<Registro>&);
-void escribirArchivo(string, const vector<Registro>&);
 
 int main(int argc, char* argv[]) {
     string nombreArchivo = "bitacora.txt";
@@ -21,13 +15,6 @@ int main(int argc, char* argv[]) {
 
     leerArchivo(nombreArchivo, registros);
     cout << "Total de lineas: " << registros.size() << endl;
-
-
-    sort(registros.begin(), registros.end());
-
-    // Escribir los registros ordenados en un nuevo archivo
-    escribirArchivo("bitacora_ordenada.txt", registros);
-
     cout << "Cual registro quieres ver? : ";
     int n;
     cin >> n;
@@ -43,26 +30,12 @@ int main(int argc, char* argv[]) {
 }
 
 void leerArchivo(string nombreArchivo, vector<Registro>& registros) {
-    ifstream s(nombreArchivo);
-    if (!s.is_open()) {
-        cerr << "No se pudo abrir el archivo " << nombreArchivo << endl;
-        return;
-    }
+    ifstream s;
+    s.open(nombreArchivo);
     Registro r;
-    while (s >> r) {
+    while (!s.eof()) {
+        s >> r;
         registros.push_back(r);
     }
-    s.close();
-}
-
-void escribirArchivo(string nombreArchivo, const vector<Registro>& registros) {
-    ofstream s(nombreArchivo);
-    if (!s.is_open()) {
-        cerr << "No se pudo abrir el archivo " << nombreArchivo << endl;
-        return;
-    }
-    for (const auto& registro : registros) {
-        s << registro << endl;
-    }
-    s.close();
+    s.close(); // hay que cerrar nuestro archivo al terminar la lectura
 }

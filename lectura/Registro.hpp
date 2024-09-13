@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "Fecha.h"
+#include "Fecha.hpp"
 #include <fstream>
 
 class Registro {
@@ -12,8 +12,7 @@ class Registro {
     Registro();
     Registro(std::string, int, std::string, std::string, std::string);
     Registro(Fecha, std::string, std::string);
-    void print() const;
-    bool operator<(const Registro&) const;
-    friend std::ifstream& operator>>(std::ifstream&, Registro&);
-    friend std::ostream& operator<<(std::ostream&, const Registro&);
+    void print();
+    bool operator<(Registro&);
+    friend std::ifstream& operator>>(std::ifstream&,Registro&);
 };
