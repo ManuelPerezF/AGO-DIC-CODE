@@ -117,7 +117,9 @@ bool Fecha::operator<=(const Fecha& v) const {
     else
         return false;
 }
-
+bool Fecha::operator==(const Fecha& v) const {
+    return m == v.m && dia == v.dia && hh == v.hh && mm == v.mm && ss == v.ss;
+}
 std::ostream& operator<<(std::ostream& os, const Fecha& f) {
     os << f.mes << " " << f.dia << " " << f.hhmmss;
     return os;
