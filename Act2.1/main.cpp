@@ -16,6 +16,15 @@ void printMenu() {
 
 int main() {
     lista l, m;
+
+    for (int i = 0; i < 10; i++) 
+    {
+        int valor = rand() % 100;
+        l.addFirst(valor);
+
+    }
+    l.print();
+    
     int opcion, valor, posicion;
 
     while (true) {
