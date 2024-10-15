@@ -1,3 +1,6 @@
+//Manuel Antonio Perez Fonseca A01741957
+//Act 2.1 - Implementación de un ADT de estructura de datos lineales
+
 #include <iostream>
 #include "LinkedList.h"
 
